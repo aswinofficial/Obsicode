@@ -1,12 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 .boxes {
   display: flex;
@@ -52,14 +49,101 @@ img {
   margin-bottom: 2%;
 }
 
-.text {
-  
-color: white;
-text-align: center;
-
+.text{
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  top: 28%;
+  transform: translateY(-50%);
+   font-weight: 500;
+   font-size: large;
 }
 
-.text h3{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+#line1{
+  background: linear-gradient(to right,#F808D1, #FE0572);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.credits{
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  top: 27%;
+  transform: translateY(-50%);
+  font-weight: 300;
+  font-size: large;
+}
+
+#myname{
+  font-size:larger;
+}
+#python{
+  font-size: small;
+}
+
+#magic{
+background: linear-gradient(to right,#FB6704,#F808D1);
+  -webkit-text-fill-color:white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  border-radius: 15px;
+  margin: 50px;
+  margin-left: 105px;
+  margin-right: 105px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+.feilds{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+#entry{
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-size: large;
+color: #919597;
+display: flex;
+align-items: flex-end;
+}
+
+.entry-feild {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 50%;
+  height: 50px;
+  border-radius: 5px;
+  border: #12181b;
+  background-color: #12181b;
+  color: #919597;
+}
+
+svg{
+  width: 15rem;
+  height: 15rem;
+}
+button{
+  margin-top: 2rem;
+  width: 12rem;
+  height: 4rem;
+  align-items: center;
+  background-color: #12181b;
+  border: #12181b;
+  border-radius: 10px;
+}
+button img{
+  
+  width: 35px;
+  height: 35px;
 }
