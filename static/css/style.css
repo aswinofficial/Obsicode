@@ -118,6 +118,9 @@ display: flex;
 align-items: flex-end;
 }
 
+#entry-line{
+  width: 50vw;
+}
 .entry-feild {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
@@ -128,8 +131,26 @@ align-items: flex-end;
   background-color: #12181b;
   color: #919597;
 }
+.entry-button{
+    font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 60px;
+   height: 50px;
+  border-radius: 5px;
+  border: #12181b;
+  color: #F808D1;
+  background: #12181b;
+}
 
-svg{
+
+#output-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#dna {
   width: 15rem;
   height: 15rem;
 }
@@ -143,7 +164,6 @@ button{
   border-radius: 10px;
 }
 button img{
-  
   width: 35px;
   height: 35px;
 }
