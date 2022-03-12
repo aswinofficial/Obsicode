@@ -59,9 +59,12 @@
 
                 <br>
                 <br>
-                <button type="submit">
-                    <img src="{{ url_for('static',filename='images/download.svg') }}" />
-                </button>
+
+                    <a id="download-anchor" href="{{ output_img }}" download="QR-code">
+                        <button id="download-button" type="submit">
+                            <img src="{{ url_for('static',filename='images/download.svg') }}" />
+                        </button>
+                    </a>
                 </div>
             
         </div>

@@ -1,16 +1,21 @@
 from flask import Flask,render_template,url_for,request
 import qrcode
 import support
+import dash
+import dash_html_components as html
 
 app = Flask(__name__)
 
 
 def creating_qrcode(input_):
-    img = qrcode.make(input_)
-    global filename
-    filename = support.deEmojify(str(input_))
-    filename = support.duplicate_name_check(str(filename))
-    img.save(f"static/images/{filename}.png")
+    if str(input_) == "":
+        return False
+    else:
+        img = qrcode.make(input_)
+        global filename
+        filename = support.deEmojify(str(input_))
+        filename = support.duplicate_name_check(str(filename))
+        img.save(f"static/images/{filename}.png")
 
 
 @app.route("/",methods=["POST","GET"])
@@ -18,14 +23,17 @@ def index():
     if request.method == "POST":
         support.deletion()
         original_entry = request.form["entry"]
-        creating_qrcode(original_entry)
-        qr_code_img = url_for('static', filename=f'images/{filename}.png')
-        return render_template('index.html',output_img = qr_code_img)
+        if creating_qrcode(original_entry) == False:
+            qr_code_img = url_for('static', filename='images/dna.png')
+            return render_template('index.html',output_img=qr_code_img)
+        else:
+            qr_code_img = url_for('static', filename=f'images/{filename}.png')
+            return render_template('index.html', bool = "all", output_img=qr_code_img)
 
     else:
         support.deletion()
         dna_img = url_for('static', filename='images/dna.png')
-        return render_template('index.html', output_img=dna_img)
+        return render_template('index.html',output_img=dna_img)
 
 
 if __name__ == "__main__":
