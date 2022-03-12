@@ -1,8 +1,6 @@
 from flask import Flask,render_template,url_for,request
 import qrcode
 import support
-import dash
-import dash_html_components as html
 
 app = Flask(__name__)
 
@@ -28,7 +26,7 @@ def index():
             return render_template('index.html',output_img=qr_code_img)
         else:
             qr_code_img = url_for('static', filename=f'images/{filename}.png')
-            return render_template('index.html', bool = "all", output_img=qr_code_img)
+            return render_template('index.html',output_img=qr_code_img)
 
     else:
         support.deletion()
