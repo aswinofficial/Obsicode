@@ -59,25 +59,3 @@ def duplicate_name_check(name):
         final_name = name
         return name 
 
-def deletion():
-
-    try:
-        rand_numbs.pop()
-        names.pop()
-
-        files = os.listdir(".\static\images")
-
-        for filename in files:
-            if filename not in site_imgfiles:
-                os.remove(".\static\images\\"+str(filename))
-        
-    except:
-        files = os.listdir(".\static\images")
-
-        for filename in files:
-            if filename not in site_imgfiles:
-                os.remove(".\static\images\\"+str(filename))
-
-    else:
-        return "path clear"
-

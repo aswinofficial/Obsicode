@@ -19,7 +19,6 @@ def creating_qrcode(input_):
 @app.route("/",methods=["POST","GET"])
 def index():
     if request.method == "POST":
-        support.deletion()
         original_entry = request.form["entry"]
         if creating_qrcode(original_entry) == False:
             qr_code_img = url_for('static', filename='images/dna.png')
@@ -29,7 +28,6 @@ def index():
             return render_template('index.html',output_img=qr_code_img)
 
     else:
-        support.deletion()
         dna_img = url_for('static', filename='images/dna.png')
         return render_template('index.html',output_img=dna_img)
 
