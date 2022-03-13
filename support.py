@@ -47,6 +47,8 @@ def deEmojify(text):
 
 
 def duplicate_name_check(name):
+    
+    name = name.replace("/","-")
     global final_name
     final_name = ''
     if str(name) in names:
@@ -55,6 +57,7 @@ def duplicate_name_check(name):
         final_name = new_name
         return new_name
     else:
+        name = name.replace("/","-")
         names.append(name)
         final_name = name
         return name 
